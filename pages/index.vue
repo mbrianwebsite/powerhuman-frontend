@@ -18,8 +18,8 @@
             </div>
             <div class="flex items-center gap-4">
                 <form class="shrink md:w-[516px] w-full">
-                    <input type="text" name="" id="" class="input-field !outline-none !border-none italic form-icon-search ring-indigo-200
-                                    focus:ring-2 transition-all duration-300 w-full"
+                    <input type="text" name="" id="" class="input-field !outline-none !border-none italic ring-indigo-200
+                                        focus:ring-2 transition-all duration-300 w-full"
                         placeholder="Search people, team, project">
                 </form>
                 <a href="#" class="flex-none w-[46px] h-[46px] bg-white rounded-full p-[11px] relative notification-dot">

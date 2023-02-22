@@ -1,4 +1,4 @@
 <template>
-    <SideBar />
+    <Sidebar />
     <slot />
 </template>

@@ -8,6 +8,14 @@ import IconHome from '~/assets/svgs/ic-home.svg'
 import IconGift from '~/assets/svgs/ic-gift.svg'
 import IconSetting from '~/assets/svgs/ic-settings.svg'
 import IconSignout from '~/assets/svgs/ic-signout.svg'
+
+const router = useRouter();
+
+function logout() {
+    localStorage.clear("access_token");
+    localStorage.clear("token_type");
+    router.push({path:"/login"});
+}
 </script>
 <template>
     <!-- Sidebar -->
@@ -38,7 +46,7 @@ import IconSignout from '~/assets/svgs/ic-signout.svg'
                 <SidebarMenu url="/companies" :img="IconHome" title="Company" />
                 <SidebarMenu url="#" :img="IconGift" title="Rewards" />
                 <SidebarMenu url="#" :img="IconSetting" title="Settings" />
-                <SidebarMenu url="#" :img="IconSignout" title="LogOut" />
+                <SidebarMenu @click="logout()" :img="IconSignout" title="LogOut" />
             </div>
         </div>
     </div>

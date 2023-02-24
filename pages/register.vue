@@ -1,10 +1,39 @@
 <script setup>
+
+import { useUserStore } from "@/stores/user.js"
+const userStore = useUserStore()
+
+const router = useRouter();
+
 useHead({
     title: 'PowerHuman HRIS - Register',
 })
 definePageMeta({
     layout: 'full'
 })
+
+const form = ref({
+    email: '',
+    password: '',
+    name:''
+})
+
+async function register() {
+    try {
+        const { data } = await useFetch('https://powerhuman-backend.test/api/register', {
+            method: 'POST',
+            body: form
+        })
+        localStorage.setItem('access_token', data.value.result.access_token)
+        localStorage.setItem('token_type', data.value.result.token_type)
+
+        userStore.fetchUser()
+        router.push({ path: "/" });
+
+    } catch (error) {
+        console.error(error);
+    }
+}
 </script>
 
 <template>
@@ -18,20 +47,20 @@ definePageMeta({
         </p>
         <form class="w-full card">
             <div class="form-group">
-                <label for="" class="text-grey">Company Name</label>
-                <input type="text" class="input-field">
+                <label for="" class="text-grey">Fullname Name</label>
+                <input v-model="form.name" type="text" class="input-field">
             </div>
             <div class="form-group">
                 <label for="" class="text-grey">Email Address</label>
-                <input type="email" class="input-field">
+                <input v-model="form.email" type="email" class="input-field">
         </div>
         <div class="form-group">
                 <label for="" class="text-grey">Password</label>
-                <input type="password" class="input-field">
+                <input v-model="form.password" type="password" class="input-field">
             </div>
-            <a href="signin.html" class="w-full btn btn-primary mt-[14px]">
+            <div @click="register" class="w-full btn btn-primary mt-[14px]">
                 Continue
-            </a>
+            </div>
             <!-- <button type="button" class="w-full btn btn-primary mt-[14px]">
                             Continue
                         </button> -->

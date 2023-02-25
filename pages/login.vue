@@ -2,7 +2,6 @@
 import { storeToRefs } from "pinia";
 import { useUserStore } from "@/stores/user.js"
 const userStore = useUserStore()
-const router = useRouter();
 
 
 useHead({
@@ -25,7 +24,7 @@ const loading = ref(true)
 const checkLogin = () => {
     console.log(isLogin.value)
     if (isLogin.value == true) {
-        router.push({ path: '/' })
+        navigateTo("/")
     }
 }
 
@@ -47,7 +46,7 @@ async function login() {
         localStorage.setItem('access_token', data.value.result.access_token)
         localStorage.setItem('token_type', data.value.result.token_type)
 
-        router.push({ path: "/" });
+        navigateTo("/")
 
     } catch (error) {
         console.error(error);

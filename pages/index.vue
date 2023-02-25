@@ -2,7 +2,6 @@
 import { storeToRefs } from "pinia";
 import { useUserStore } from "@/stores/user";
 const userStore = useUserStore()
-const router = useRouter();
 
 
 useHead({
@@ -19,7 +18,7 @@ const loading = ref(true)
 const checkLogin = () => {
     console.log(isLogin.value)
     if (isLogin.value == false) {
-        router.push({ path: '/login' })
+        navigateTo("/login")
     }
 }
 

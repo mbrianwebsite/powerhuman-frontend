@@ -26,7 +26,6 @@ async function login() {
         localStorage.setItem('access_token', data.value.result.access_token)
         localStorage.setItem('token_type', data.value.result.token_type)
 
-        userStore.fetchUser()
         router.push({ path: "/" });
 
     } catch (error) {
@@ -67,9 +66,6 @@ async function login() {
             <div @click="login" class="w-full btn btn-primary mt-[14px]">
                 Sign In
             </div>
-            <!-- <button type="button" class="w-full btn btn-primary mt-[14px]">
-                                                                                                                                                                                                                                                                    Sign In
-                                                                                                                                                                                                                                                                </button> -->
         </form>
     </section>
 </template>

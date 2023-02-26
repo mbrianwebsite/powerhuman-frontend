@@ -52,16 +52,6 @@ async function login() {
         console.error(error);
     }
 }
-// const login = async () => {
-//     const { data } = await useFetch('https://powerhuman-backend.test/api/login', {
-//         method: 'POST',
-//         body: form
-//         // method: 'GET',
-//         // mode: 'no-cors',
-//         // body: Array
-//     })
-//     console.log(data.value.result)
-// }
 
 </script>
 

@@ -29,6 +29,33 @@ onMounted(async () => {
     })
     loading.value = false
 })
+
+
+const form = ref({
+    name: '',
+    logo: null
+})
+
+const createCompany = async () => {
+    const { data } = await useFetch(
+        "https://powerhuman-backend.test/api/company",
+        {
+            // mode: "no-cors",
+            method: "POST",
+            body: form,
+            headers: {
+                Authorization:
+                    localStorage.getItem("token_type") +
+                    " " +
+                    localStorage.getItem("access_token"),
+            },
+        }
+    );
+
+    navigateTo("/companies")
+}
+
+
 </script>
 <template>
     <Loading v-if="loading" />
@@ -37,11 +64,11 @@ onMounted(async () => {
         <form class="w-full card">
             <div class="form-group">
                 <label for="" class="text-grey">Name</label>
-                <input type="text" class="input-field" name="name" />
+                <input v-model="form.name" class="input-field" name="name" />
             </div>
-            <button type="submit" class="w-full btn btn-primary mt-[14px]">
+            <div @click="createCompany" class="w-full btn btn-primary mt-[14px]">
                 Save
-            </button>
+            </div>
         </form>
     </section>
 </template>

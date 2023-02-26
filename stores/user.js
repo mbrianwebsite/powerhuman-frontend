@@ -3,6 +3,7 @@ import { defineStore } from "pinia";
 export const useUserStore = defineStore("user", () => {
   const userData = ref("");
   const isLogin = ref(false);
+  const companyId = ref();
 
   async function fetchUser() {
     const { data } = await useFetch(

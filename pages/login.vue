@@ -1,9 +1,4 @@
 <script setup>
-import { storeToRefs } from "pinia";
-import { useUserStore } from "@/stores/user.js"
-const userStore = useUserStore()
-
-
 useHead({
     title: 'PowerHuman HRIS - Login',
 })
@@ -16,48 +11,10 @@ const form = ref({
     password: ''
 })
 
-const { isLogin } = storeToRefs(userStore)
-
-
-const loading = ref(true)
-
-const checkLogin = () => {
-    console.log(isLogin.value)
-    if (isLogin.value == true) {
-        navigateTo("/")
-    }
-}
-
-onMounted(async () => {
-    await nextTick(async () => {
-       await userStore.fetchUser()
-       checkLogin()
-    })
-    loading.value = false
-})
-
-
-async function login() {
-    try {
-        const { data } = await useFetch('https://powerhuman-backend.test/api/login', {
-            method: 'POST',
-            body: form
-        })
-        localStorage.setItem('access_token', data.value.result.access_token)
-        localStorage.setItem('token_type', data.value.result.token_type)
-
-        navigateTo("/")
-
-    } catch (error) {
-        console.error(error);
-    }
-}
-
 </script>
 
 <template>
-    <Loading v-if="loading"/>
-    <section v-if="!loading" class="py-[50px] flex flex-col items-center justify-center px-4">
+    <section class="py-[50px] flex flex-col items-center justify-center px-4">
         <img src="~/assets/svgs/logo-type.svg" alt="">
         <div class="text-[32px] font-semibold text-dark mt-[70px]">
             Sign In

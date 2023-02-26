@@ -1,6 +1,4 @@
 <script setup>
-import { storeToRefs } from "pinia";
-import { useUserStore } from "@/stores/user";
 
 useHead({
     title: "PowerHuman HRIS - Employees"
@@ -10,31 +8,10 @@ definePageMeta({
     layout: 'default'
 })
 
-const userStore = useUserStore()
-
-const { isLogin } = storeToRefs(userStore)
-
-const loading = ref(true)
-
-const checkLogin = () => {
-    console.log(isLogin.value)
-    if (isLogin.value == false) {
-        navigateTo("/login")
-    }
-}
-
-onMounted(async () => {
-    await nextTick(async () => {
-        await userStore.fetchUser()
-        checkLogin()
-    })
-    loading.value = false
-})
 </script>
 <template>
-    <Loading v-if="loading" />
     <!-- Main Content -->
-    <div v-if="!loading" class="lg:pr-[70px] py-[50px] lg:ml-[320px] xl:ml-[365px] px-4 lg:pl-0">
+    <div class="lg:pr-[70px] py-[50px] lg:ml-[320px] xl:ml-[365px] px-4 lg:pl-0">
         <!-- Top Section -->
         <section class="flex flex-col flex-wrap justify-between gap-6 md:items-center md:flex-row">
             <div class="flex items-center justify-between gap-4">
@@ -52,7 +29,7 @@ onMounted(async () => {
             <div class="flex items-center gap-4">
                 <form class="shrink md:w-[516px] w-full">
                     <input type="text" name="" id="" class="input-field !outline-none !border-none italic form-icon-search ring-indigo-200
-                                                focus:ring-2 transition-all duration-300 w-full"
+                                                    focus:ring-2 transition-all duration-300 w-full"
                         placeholder="Search people, team, project">
                 </form>
                 <a href="#" class="flex-none w-[46px] h-[46px] bg-white rounded-full p-[11px] relative notification-dot">

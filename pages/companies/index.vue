@@ -2,7 +2,6 @@
 import { storeToRefs } from "pinia";
 import { useUserStore } from "@/stores/user";
 
-
 useHead({
     title: 'PowerHuman HRIS - Select Company'
 })
@@ -23,13 +22,36 @@ const checkLogin = () => {
     }
 }
 
+const fetchCompany = async () => {
+    const { data } = await useFetch(
+        "https://powerhuman-backend.test/api/company",
+        {
+            // mode: "no-cors",
+            method: "GET",
+            headers: {
+                Authorization:
+                    localStorage.getItem("token_type") +
+                    " " +
+                    localStorage.getItem("access_token"),
+            },
+        }
+    );
+    console.log(data.value.result.data)
+    companies.value = data.value.result.data
+}
+
 onMounted(async () => {
     await nextTick(async () => {
         await userStore.fetchUser()
         checkLogin()
+        await fetchCompany()
     })
     loading.value = false
 })
+
+const companies = ref("")
+const selectedCompany = ref()
+
 </script>
 <template>
     <Loading v-if="loading" />
@@ -39,19 +61,16 @@ onMounted(async () => {
             <div class="form-group">
                 <label for="" class="text-grey">Companies</label>
                 <!-- <p v-if="$fetchState.pending">Fetching companies...</p> -->
-                <select name="companies" id="" class="appearance-none input-field form-icon-chevron_down">
-                    <!-- <option :value="company.id" v-for="company in companies.data.result.data">
-                                                                    {{ company.name }}
-                                                                </option> -->
-                    <option value="">blablabla</option>
-                    <option value="">blablabla</option>
-                    <option value="">blablabla</option>
-                    <option value="">blablabla</option>
+                <select v-model="selectedCompany" name="companies" id=""
+                    class="appearance-none input-field form-icon-chevron_down">
+                    <option v-for="company in companies" :value="company.id" :key="company.id">
+                        {{ company.name }}
+                    </option>
                 </select>
             </div>
-            <button type="button" class="w-full btn btn-primary mt-[14px]">
+            <NuxtLink :to="`/companies/${selectedCompany}`" class="w-full btn btn-primary mt-[14px]">
                 Continue
-            </button>
+            </NuxtLink>
             <div class="text-center">or</div>
             <NuxtLink to="/companies/create" class="w-full border btn btn-white">
                 Create New Company

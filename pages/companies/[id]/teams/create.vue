@@ -1,13 +1,39 @@
 <script setup>
+import { storeToRefs } from "pinia";
+import { useUserStore } from "@/stores/user";
+
 useHead({
-    title: 'PowerHuman HRIS - Create Team'
+    title: "PowerHuman HRIS - Create a Team"
 })
+
 definePageMeta({
     layout: 'full'
 })
+
+const userStore = useUserStore()
+
+const { isLogin } = storeToRefs(userStore)
+
+const loading = ref(true)
+
+const checkLogin = () => {
+    console.log(isLogin.value)
+    if (isLogin.value == false) {
+        navigateTo("/login")
+    }
+}
+
+onMounted(async () => {
+    await nextTick(async () => {
+        await userStore.fetchUser()
+        checkLogin()
+    })
+    loading.value = false
+})
 </script>
 <template>
-    <section class="py-[70px] flex flex-col items-center justify-center px-4">
+    <Loading v-if="loading" />
+    <section v-if="!loading" class="py-[70px] flex flex-col items-center justify-center px-4">
         <div class="text-[32px] font-semibold text-dark">
             Build New Team
         </div>
@@ -21,8 +47,8 @@ definePageMeta({
             </div>
             <div class="form-group">
                 <label for="" class="text-grey">Email Address</label>
-                <input type="email" class="input-field disabled:bg-grey disabled:outline-none"
-                    value="angga@yourcompany.com" disabled>
+                <input type="email" class="input-field disabled:bg-grey disabled:outline-none" value="angga@yourcompany.com"
+                    disabled>
             </div>
             <div class="form-group">
                 <label for="" class="text-grey">Team Name</label>

@@ -1,13 +1,38 @@
 <script setup>
+import { storeToRefs } from "pinia";
+import { useUserStore } from "@/stores/user";
+
 useHead({
     title: 'PowerHuman HRIS - Create Company'
 })
 definePageMeta({
     layout: 'full'
 })
+
+const userStore = useUserStore()
+
+const { isLogin } = storeToRefs(userStore)
+
+const loading = ref(true)
+
+const checkLogin = () => {
+    console.log(isLogin.value)
+    if (isLogin.value == false) {
+        navigateTo("/login")
+    }
+}
+
+onMounted(async () => {
+    await nextTick(async () => {
+        await userStore.fetchUser()
+        checkLogin()
+    })
+    loading.value = false
+})
 </script>
 <template>
-    <section class="py-[200px] flex flex-col items-center justify-center px-4">
+    <Loading v-if="loading" />
+    <section v-if="!loading" class="py-[200px] flex flex-col items-center justify-center px-4">
         <div class="text-[32px] font-semibold text-dark mb-4">Create Companies</div>
         <form class="w-full card">
             <div class="form-group">

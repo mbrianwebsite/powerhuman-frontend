@@ -9,13 +9,6 @@ import IconGift from '~/assets/svgs/ic-gift.svg'
 import IconSetting from '~/assets/svgs/ic-settings.svg'
 import IconSignout from '~/assets/svgs/ic-signout.svg'
 
-const router = useRouter();
-
-function logout() {
-    localStorage.clear("access_token");
-    localStorage.clear("token_type");
-    router.push({path:"/login"});
-}
 </script>
 <template>
     <!-- Sidebar -->

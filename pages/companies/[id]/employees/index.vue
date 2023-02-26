@@ -103,7 +103,7 @@ definePageMeta({
                 <!-- Card -->
                 <div class="items-center card py-6 md:!py-10 md:!px-[38px] !gap-y-0">
                     <a href="#" class="absolute inset-0 focus:ring-2 ring-primary rounded-[26px]"></a>
-                    <img src="~/assets/images/user-f-1.png" width="70" alt="">
+                    <img src="~/assets/images/user-m-1.png" width="70" alt="">
                     <div class="mt-6 mb-1 font-semibold text-center text-dark">
                         Andini Danna
                     </div>
@@ -146,7 +146,7 @@ definePageMeta({
                 <!-- Card -->
                 <div class="items-center card py-6 md:!py-10 md:!px-[38px] !gap-y-0">
                     <a href="#" class="absolute inset-0 focus:ring-2 ring-primary rounded-[26px]"></a>
-                    <img src="~/assets/images/user-f-2.png" width="70" alt="">
+                    <img src="~/assets/images/user-m-2.png" width="70" alt="">
                     <div class="mt-6 mb-1 font-semibold text-center text-dark">
                         Mw Kemanna
                     </div>
@@ -176,7 +176,7 @@ definePageMeta({
                 <!-- Card -->
                 <div class="items-center card py-6 md:!py-10 md:!px-[38px] !gap-y-0">
                     <a href="#" class="absolute inset-0 focus:ring-2 ring-primary rounded-[26px]"></a>
-                    <img src="~/assets/images/user-f-3.png" width="70" alt="">
+                    <img src="~/assets/images/user-m-3.png" width="70" alt="">
                     <div class="mt-6 mb-1 font-semibold text-center text-dark">
                         Hehe Nadiia
                     </div>
@@ -205,7 +205,7 @@ definePageMeta({
                 <!-- Card -->
                 <div class="items-center card py-6 md:!py-10 md:!px-[38px] !gap-y-0">
                     <a href="#" class="absolute inset-0 focus:ring-2 ring-primary rounded-[26px]"></a>
-                    <img src="~/assets/images/user-f-4.png" width="70" alt="">
+                    <img src="~/assets/images/user-m-4.png" width="70" alt="">
                     <div class="mt-6 mb-1 font-semibold text-center text-dark">
                         Eksis Melita
                     </div>

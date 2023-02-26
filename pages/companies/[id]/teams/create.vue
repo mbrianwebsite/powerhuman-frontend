@@ -38,9 +38,9 @@ definePageMeta({
                     <option value="">Inactive</option>
                 </select>
             </div>
-            <a href="my_teams.html" class="w-full btn btn-primary mt-[14px]">
+            <NuxtLink to="/" class="w-full btn btn-primary mt-[14px]">
                 Continue
-            </a>
+            </NuxtLink>
         </form>
     </section>
 </template>

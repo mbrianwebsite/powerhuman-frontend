@@ -1,4 +1,5 @@
 <script setup>
+
 useHead({
     title: "PowerHuman HRIS - Create a Role"
 })
@@ -33,9 +34,9 @@ definePageMeta({
                     </li>
                 </ul>
             </div>
-            <a href="roles.html" class="w-full btn btn-primary mt-[14px]">
+            <NuxtLink to="/" class="w-full btn btn-primary mt-[14px]">
                 Save Role
-            </a>
+            </NuxtLink>
         </form>
     </section>
 </template>

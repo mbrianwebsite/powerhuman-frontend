@@ -59,16 +59,16 @@ definePageMeta({
                                 18,500,000
                             </div>
                         </div>
-                        <a href="employee_create.html">
+                        <a href="#">
                             <img src="~/assets/svgs/ric-plus.svg" alt="">
                         </a>
                     </div>
                     <div class="flex items-center union-images">
-                        <img src="~/assets/images/user-f-3.png" alt="">
+                        <img src="~/assets/images/user-m-3.png" alt="">
                         <img src="~/assets/images/user-m-1.png" alt="">
-                        <img src="~/assets/images/user-f-1.png" alt="">
                         <img src="~/assets/images/user-m-2.png" alt="">
-                        <img src="~/assets/images/user-f-2.png" alt="">
+                        <img src="~/assets/images/user-m-1.png" alt="">
+                        <img src="~/assets/images/user-m-3.png" alt="">
                     </div>
                 </div>
                 <div class="card !gap-y-10 min-h-[200px]">
@@ -214,7 +214,7 @@ definePageMeta({
                         <!-- Item -->
                         <div class="flex items-center justify-between pb-5 border-b border-gray-100">
                             <div class="flex items-center gap-4">
-                                <img src="~/assets/images/user-f-1.png" width="60" alt="">
+                                <img src="~/assets/images/user-m-1.png" width="60" alt="">
                                 <div>
                                     <div class="mb-1 font-semibold text-dark">
                                         Amalia Syahrina
@@ -238,7 +238,7 @@ definePageMeta({
                         <!-- Item -->
                         <div class="flex items-center justify-between pb-5 border-b border-gray-100">
                             <div class="flex items-center gap-4">
-                                <img src="~/assets/images/user-f-2.png" width="60" alt="">
+                                <img src="~/assets/images/user-m-2.png" width="60" alt="">
                                 <div>
                                     <div class="mb-1 font-semibold text-dark">
                                         Sintia Siny
@@ -262,7 +262,7 @@ definePageMeta({
                         <!-- Item -->
                         <div class="flex items-center justify-between pb-5 border-b border-gray-100">
                             <div class="flex items-center gap-4">
-                                <img src="~/assets/images/user-f-1.png" width="60" alt="">
+                                <img src="~/assets/images/user-m-1.png" width="60" alt="">
                                 <div>
                                     <div class="mb-1 font-semibold text-dark">
                                         Amalia Syahrina

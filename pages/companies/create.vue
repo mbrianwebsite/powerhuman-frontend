@@ -1,10 +1,14 @@
 <script setup>
-
 useHead({
     title: 'PowerHuman HRIS - Create Company'
 })
 definePageMeta({
     layout: 'full'
+})
+
+const form = ref({
+    name: '',
+    logo: null
 })
 
 
@@ -17,9 +21,9 @@ definePageMeta({
                 <label for="" class="text-grey">Name</label>
                 <input v-model="form.name" class="input-field" name="name" />
             </div>
-            <div @click="createCompany" class="w-full btn btn-primary mt-[14px]">
+            <NuxtLink to="/" class="w-full btn btn-primary mt-[14px]">
                 Save
-            </div>
+            </NuxtLink>
         </form>
     </section>
 </template>

@@ -8,6 +8,7 @@ import IconHome from '~/assets/svgs/ic-home.svg'
 import IconGift from '~/assets/svgs/ic-gift.svg'
 import IconSetting from '~/assets/svgs/ic-settings.svg'
 import IconSignout from '~/assets/svgs/ic-signout.svg'
+import Menu from './menu.vue'
 
 </script>
 <template>
@@ -28,18 +29,18 @@ import IconSignout from '~/assets/svgs/ic-signout.svg'
             </div>
             <div class="flex flex-col gap-4">
                 <div class="text-sm text-grey">Daily Use</div>
-                <SidebarMenu url="/" :img="IconGrid" title="Overview" />
-                <SidebarMenu url="/companies/1/employees" :img="IconUser" title="Employees" />
-                <SidebarMenu url="/companies/1/teams" :img="IconBrief" title="My Teams" />
-                <SidebarMenu url="/companies/1/roles" :img="IconFlag" title="Roles" />
+                <Menu url="/" :img="IconGrid" title="Overview" />
+                <Menu url="/companies/1/employees" :img="IconUser" title="Employees" />
+                <Menu url="/companies/1/teams" :img="IconBrief" title="My Teams" />
+                <Menu url="/companies/1/roles" :img="IconFlag" title="Roles" />
             </div>
             <div class="flex flex-col gap-4">
                 <div class="text-sm text-grey">Others</div>
-                <SidebarMenu url="#" :img="IconBox" title="Insurances" />
-                <SidebarMenu url="/companies" :img="IconHome" title="Company" />
-                <SidebarMenu url="#" :img="IconGift" title="Rewards" />
-                <SidebarMenu url="#" :img="IconSetting" title="Settings" />
-                <SidebarMenu @click="logout()" :img="IconSignout" title="LogOut" />
+                <Menu url="#" :img="IconBox" title="Insurances" />
+                <Menu url="/companies" :img="IconHome" title="Company" />
+                <Menu url="#" :img="IconGift" title="Rewards" />
+                <Menu url="#" :img="IconSetting" title="Settings" />
+                <Menu @click="logout()" :img="IconSignout" title="LogOut" />
             </div>
         </div>
     </div>

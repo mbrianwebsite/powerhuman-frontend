@@ -4,10 +4,6 @@ useHead({
     title: "PowerHuman HRIS - Roles"
 })
 
-definePageMeta({
-    layout: 'default'
-})
-
 </script>
 <template>
     <!-- Main Content -->

@@ -4,9 +4,6 @@ useHead({
     title: "PowerHuman HRIS - Employees"
 })
 
-definePageMeta({
-    layout: 'default'
-})
 
 </script>
 <template>

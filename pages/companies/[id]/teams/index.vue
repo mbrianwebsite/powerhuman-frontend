@@ -3,9 +3,6 @@ useHead({
     title: "PowerHuman HRIS - Teams"
 })
 
-definePageMeta({
-    layout: 'default'
-})
 </script>
 <template>
     <div class="lg:pr-[70px] py-[50px] lg:ml-[320px] xl:ml-[365px] px-4 lg:pl-0">
